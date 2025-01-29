@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, Pressable, StatusBar, StyleSheet } from 'react-native';
 import { RefAsProps } from './scenarios/RefAsProps';
+import { SearchScreen } from './scenarios/UseDefferedValue';
+import { ErrorReporting } from './scenarios/ImproveErrorReporting';
+import { SuspenseImprovements } from './scenarios/SuspenseImprovements';
 
 const examples = [
   {
@@ -9,6 +12,24 @@ const examples = [
     description: 'Testing ref as props',
     component: <RefAsProps />, // Use React Node instead of function call
   },
+  {
+    title: 'useDefferedValue',
+    key: 'use_deffered_value',
+    description: 'Testing useDefferedValue',
+    component: <SearchScreen deferredValue='hello'/>
+  },
+  {
+    title: 'improveErrorReporting',
+    key: 'improve_error_reporting',
+    description: 'batches similiar errors',
+    component:<ErrorReporting />
+  },
+  {
+    title: 'suspenseImprovements',
+    key: 'suspense_improvements',
+    description: 'promise auto suspense',
+    component:<SuspenseImprovements />
+  }
   // Add other scenarios here
 ];
 
