@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { ConditionalContext, ContextAsProvider, RefAsProps } from './scenarios';
+import { RefCleanupFunctions } from './scenarios/RefCleanupFunctions';
 
 const examples = [
   {
@@ -20,6 +21,12 @@ const examples = [
     key: 'conditional_context',
     description: 'Consume context conditionally with use()',
     component: <ConditionalContext />,
+  },
+  {
+    title: 'Cleanup Functions for Refs',
+    key: 'cleanup_functions_for_refs',
+    description: 'When the component unmounts, React will call the cleanup function returned from the ref callback',
+    component: <RefCleanupFunctions />,
   },
 ];
 
