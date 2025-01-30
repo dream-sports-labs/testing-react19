@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, Pressable, StatusBar, StyleSheet } from 'react-native';
-import { RefAsProps } from './scenarios/RefAsProps';
+import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { ContextAsProvider, RefAsProps } from './scenarios';
 
 const examples = [
   {
@@ -8,6 +8,12 @@ const examples = [
     key: 'ref_as_props',
     description: 'Testing ref as props',
     component: <RefAsProps />, // Use React Node instead of function call
+  },
+  {
+    title: 'ContextAsProvider',
+    key: 'context_as_provider',
+    description: 'Testing context as provider',
+    component: <ContextAsProvider />,
   },
   // Add other scenarios here
 ];
