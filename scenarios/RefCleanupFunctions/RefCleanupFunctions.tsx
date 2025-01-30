@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { CodeBlock, Container, Description, Title } from '../../src/components';
 import { REF_CLEANUP_FUNCTIONS_TEXTS } from './RefCleanupFunctions.constants';
 
 type RefCleanupFunctionsProps = {};
 export const RefCleanupFunctions = ({}: RefCleanupFunctionsProps) => {
-  const [showInput, setShowInput] = React.useState(true);
+  const [showInput, setShowInput] = useState(true);
   const count = useRef(0);
 
   const handleInputVisibility = () => {
@@ -38,7 +38,7 @@ export const RefCleanupFunctions = ({}: RefCleanupFunctionsProps) => {
         />
       </View>
       <View style={styles.actionSection}>
-        <Text>Current Cleanup Count: {count.current}</Text>
+        <Text style={styles.count}>Clean-up Count: {count.current}</Text>
       </View>
       {showInput && (
         <TextInput
@@ -69,5 +69,10 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     fontWeight: 'bold',
     color: '#d73a49',
+  },
+  count: {
+    fontSize: 16,
+    color: 'blue',
+    fontWeight: 'bold',
   },
 });
