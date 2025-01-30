@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import { ConditionalContext, ContextAsProvider, RefAsProps } from './scenarios';
+import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RefAsProps, RtrShallowRenderer } from './scenarios';
 import { RefCleanupFunctions } from './scenarios/RefCleanupFunctions';
 
 const examples = [
@@ -27,6 +27,18 @@ const examples = [
     key: 'cleanup_functions_for_refs',
     description: 'When the component unmounts, React will call the cleanup function returned from the ref callback',
     component: <RefCleanupFunctions />,
+  },
+  {
+    title: 'react-test-renderer/shallow',
+    key: 'react_test_renderer_shallow',
+    description: 'Package name changed to import shallow renderer',
+    component: <RtrShallowRenderer />,
+  },
+  {
+    title: 'Depreacted: react-test-renderer',
+    key: 'deprecated_react_test_renderer',
+    description: 'react-test-renderer is deprecated in order to use modern testing libraries',
+    component: <ReactTestRenderer />,
   },
 ];
 
