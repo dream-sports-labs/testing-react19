@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, Pressable, StatusBar, StyleSheet } from 'react-native';
 import { RefAsProps } from './scenarios/RefAsProps';
+import { UseWithContext } from './scenarios/UseWithContext';
 
 const examples = [
   {
@@ -8,6 +9,12 @@ const examples = [
     key: 'ref_as_props',
     description: 'Testing ref as props',
     component: <RefAsProps />, // Use React Node instead of function call
+  },
+  {
+    title: 'UseWithContext',
+    key: 'use_with_context',
+    description: 'Testing use with context',
+    component: <UseWithContext />, // Use React Node instead of function call
   },
   // Add other scenarios here
 ];
