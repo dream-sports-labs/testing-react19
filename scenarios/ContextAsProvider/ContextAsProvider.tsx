@@ -1,11 +1,11 @@
 import React, { createContext, useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import {
-    CodeBlock,
-    Container,
-    Description,
-    Note,
-    Title,
+  CodeBlock,
+  Container,
+  Description,
+  Note,
+  Title,
 } from '../../src/components';
 import { CONTENT_AS_PROVIDER_TEXTS } from './ContextAsProvider.constants';
 import { Themes } from './ContextAsProvider.interface';
@@ -41,7 +41,7 @@ export const ContextAsProvider = () => {
           <Text style={styles.inlineCode}>{'<Context.Provider>'}</Text>
         </Note>
         <View style={styles.actionSection}>
-          <Button onPress={toggleTheme} title="Toggle Theme of Code Block" />
+          <Button onPress={toggleTheme} title={CONTENT_AS_PROVIDER_TEXTS.THEME_TOGGLE_CTA} />
         </View>
       </Container>
     </ThemeContext>

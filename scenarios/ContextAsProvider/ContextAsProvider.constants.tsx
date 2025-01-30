@@ -1,6 +1,5 @@
-
 export const CONTENT_AS_PROVIDER_TEXTS = {
-    CODE_BLOCK: `const ThemeContext = createContext('');
+  CODE_BLOCK: `const ThemeContext = createContext('');
 
 function App({children}) {
   return (
@@ -9,4 +8,5 @@ function App({children}) {
     </ThemeContext>
   );  
 }`,
+  THEME_TOGGLE_CTA: 'Toggle Theme of Code Block',
 };
