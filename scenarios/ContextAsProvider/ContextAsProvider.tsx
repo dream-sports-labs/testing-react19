@@ -1,7 +1,6 @@
 import React, { createContext, useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import {
-  CodeBlock,
   Container,
   Description,
   Note,
@@ -9,6 +8,7 @@ import {
 } from '../../src/components';
 import { CONTENT_AS_PROVIDER_TEXTS } from './ContextAsProvider.constants';
 import { Themes } from './ContextAsProvider.interface';
+import { CodeBlock } from './components';
 
 export const ThemeContext = createContext(Themes.DARK);
 export const ContextAsProvider = () => {
@@ -41,7 +41,7 @@ export const ContextAsProvider = () => {
           <Text style={styles.inlineCode}>{'<Context.Provider>'}</Text>
         </Note>
         <View style={styles.actionSection}>
-          <Button onPress={toggleTheme} title={CONTENT_AS_PROVIDER_TEXTS.THEME_TOGGLE_CTA} />
+          <Button onPress={toggleTheme} title={CONTENT_AS_PROVIDER_TEXTS.CTA_THEME_TOGGLE} />
         </View>
       </Container>
     </ThemeContext>

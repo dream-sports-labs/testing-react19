@@ -1,18 +1,18 @@
-import { useContext, type PropsWithChildren } from 'react';
+import { type PropsWithChildren } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { ThemeContext } from '../../../scenarios/ContextAsProvider/ContextAsProvider';
 import { Themes } from '../../../scenarios/ContextAsProvider/ContextAsProvider.interface';
 
 type CodeBlockProps = PropsWithChildren<{
   code?: string;
   selectable?: boolean;
+  theme?: Themes;
 }>;
 export const CodeBlock = ({
   code,
   children,
   selectable = true,
+  theme = Themes.DARK,
 }: CodeBlockProps) => {
-  const theme = useContext(ThemeContext); // this is intentionally bounded with ContextAsProvider component for validate the use case
 
   return (
     <View

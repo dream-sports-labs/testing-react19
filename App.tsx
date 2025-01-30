@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import { ContextAsProvider, RefAsProps } from './scenarios';
+import { ConditionalContext, ContextAsProvider, RefAsProps } from './scenarios';
 
 const examples = [
   {
@@ -10,12 +10,17 @@ const examples = [
     component: <RefAsProps />, // Use React Node instead of function call
   },
   {
-    title: 'ContextAsProvider',
+    title: 'Context As Provider',
     key: 'context_as_provider',
-    description: 'Testing context as provider',
+    description: 'Consume context as provider',
     component: <ContextAsProvider />,
   },
-  // Add other scenarios here
+  {
+    title: 'Conditional Context',
+    key: 'conditional_context',
+    description: 'Consume context conditionally with use()',
+    component: <ConditionalContext />,
+  },
 ];
 
 function App(): React.JSX.Element {

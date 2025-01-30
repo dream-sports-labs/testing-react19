@@ -8,5 +8,5 @@ function App({children}) {
     </ThemeContext>
   );  
 }`,
-  THEME_TOGGLE_CTA: 'Toggle Theme of Code Block',
+  CTA_THEME_TOGGLE: 'Toggle Theme of Code Block',
 };
