@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, Pressable, StatusBar, StyleSheet } from 'react-native';
-import { RefAsProps } from './scenarios/RefAsProps';
+import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RefAsProps, RtrShallowRenderer } from './scenarios';
+import { RefCleanupFunctions } from './scenarios/RefCleanupFunctions';
 
 const examples = [
   {
@@ -9,7 +10,36 @@ const examples = [
     description: 'Testing ref as props',
     component: <RefAsProps />, // Use React Node instead of function call
   },
-  // Add other scenarios here
+  {
+    title: 'Context As Provider',
+    key: 'context_as_provider',
+    description: 'Consume context as provider',
+    component: <ContextAsProvider />,
+  },
+  {
+    title: 'Conditional Context',
+    key: 'conditional_context',
+    description: 'Consume context conditionally with use()',
+    component: <ConditionalContext />,
+  },
+  {
+    title: 'Cleanup Functions for Refs',
+    key: 'cleanup_functions_for_refs',
+    description: 'When the component unmounts, React will call the cleanup function returned from the ref callback',
+    component: <RefCleanupFunctions />,
+  },
+  {
+    title: 'react-test-renderer/shallow',
+    key: 'react_test_renderer_shallow',
+    description: 'Package name changed to import shallow renderer',
+    component: <RtrShallowRenderer />,
+  },
+  {
+    title: 'Depreacted: react-test-renderer',
+    key: 'deprecated_react_test_renderer',
+    description: 'react-test-renderer is deprecated in order to use modern testing libraries',
+    component: <ReactTestRenderer />,
+  },
 ];
 
 function App(): React.JSX.Element {
