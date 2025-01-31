@@ -55,7 +55,7 @@ function App(): React.JSX.Element {
       {scenario !== null ? (
         <View style={styles.detailsContainer}>
           <Pressable style={styles.backButton} onPress={() => setScenario(null)}>
-            <Text style={styles.backButtonText}>← Back</Text>
+            <Text style={styles.backButtonText}>Back</Text>
           </Pressable>
           {examples.find((item) => item.key === scenario)?.component}
         </View>
@@ -74,7 +74,7 @@ function App(): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f5f5f5' },
+  container: { flex: 1, padding: 16, backgroundColor: '#f5f5f5' },
   detailsContainer: { flex: 1, padding: 16 },
   scrollContainer: { paddingVertical: 20 },
   card: {
