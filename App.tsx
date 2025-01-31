@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RefAsProps, RtrShallowRenderer } from './scenarios';
-import { RefCleanupFunctions } from './scenarios/RefCleanupFunctions';
-
+import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RtrShallowRenderer, RefCleanupFunctions, UseHookWithPromise, RefAsProps } from './scenarios';
 const examples = [
   {
     title: 'RefAsProps',
@@ -17,10 +15,16 @@ const examples = [
     component: <ContextAsProvider />,
   },
   {
-    title: 'Conditional Context',
+    title: 'use(Context)',
     key: 'conditional_context',
     description: 'Consume context conditionally with use()',
     component: <ConditionalContext />,
+  },
+  {
+    title: 'use(Promise)',
+    key: 'use_with_promise',
+    description: 'Consume promise with use()',
+    component: <UseHookWithPromise />,
   },
   {
     title: 'Cleanup Functions for Refs',
@@ -51,7 +55,7 @@ function App(): React.JSX.Element {
       {scenario !== null ? (
         <View style={styles.detailsContainer}>
           <Pressable style={styles.backButton} onPress={() => setScenario(null)}>
-            <Text style={styles.backButtonText}>← Back</Text>
+            <Text style={styles.backButtonText}>Back</Text>
           </Pressable>
           {examples.find((item) => item.key === scenario)?.component}
         </View>
