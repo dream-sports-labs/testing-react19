@@ -3,8 +3,7 @@ import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-
 import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RtrShallowRenderer } from './scenarios';
 import { RefCleanupFunctions } from './scenarios/RefCleanupFunctions';
 import { RefAsProps } from './scenarios/RefAsProps';
-import { UseWithContext } from './scenarios/UseWithContext';
-
+import { UseHookWithPromise } from './scenarios/UseHookWithPromise';
 const examples = [
   {
     title: 'RefAsProps',
@@ -19,10 +18,16 @@ const examples = [
     component: <ContextAsProvider />,
   },
   {
-    title: 'Conditional Context',
+    title: 'use(Context)',
     key: 'conditional_context',
     description: 'Consume context conditionally with use()',
     component: <ConditionalContext />,
+  },
+  {
+    title: 'use(Promise)',
+    key: 'use_with_promise',
+    description: 'Consume promise with use()',
+    component: <UseHookWithPromise />,
   },
   {
     title: 'Cleanup Functions for Refs',
@@ -41,12 +46,6 @@ const examples = [
     key: 'deprecated_react_test_renderer',
     description: 'react-test-renderer is deprecated in order to use modern testing libraries',
     component: <ReactTestRenderer />,
-  },
-  {
-    title: 'UseWithContext',
-    key: 'use_with_context',
-    description: 'Testing use with context',
-    component: <UseWithContext />,
   },
 ];
 
