@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RtrShallowRenderer } from './scenarios';
-import { RefCleanupFunctions } from './scenarios/RefCleanupFunctions';
-import { RefAsProps } from './scenarios/RefAsProps';
-import { UseHookWithPromise } from './scenarios/UseHookWithPromise';
+import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RtrShallowRenderer, RefCleanupFunctions, UseHookWithPromise, RefAsProps } from './scenarios';
 const examples = [
   {
     title: 'RefAsProps',
