@@ -7,6 +7,6 @@ function MyInput({ref}) {
 }
 
 //...
-<TextInput ref={inputRef} placeholder="Click on Focus Input" style={styles.input} />
+<TextInput ref={inputRef}/>
 <MyInput ref={inputRef} />`,
   };
