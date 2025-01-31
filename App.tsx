@@ -1,12 +1,30 @@
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RtrShallowRenderer, RefCleanupFunctions, UseHookWithPromise, RefAsProps } from './scenarios';
+import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RtrShallowRenderer, RefCleanupFunctions, UseHookWithPromise, RefAsProps, UseActionState, UseOptimistic, UseTransition } from './scenarios';
 const examples = [
   {
     title: 'RefAsProps',
     key: 'ref_as_props',
     description: 'Testing ref as props',
     component: <RefAsProps />, // Use React Node instead of function call
+  },
+  {
+    title: 'Use Transition hook',
+    key: 'use_transition',
+    description: 'New hook that lets you render a part of UI in the background',
+    component: <UseTransition />
+  },
+  {
+    title: 'Use Action State hook',
+    key: 'use_action_state',
+    description: 'New hook that allows you to update state based on result of form action',
+    component: <UseActionState />    
+  },
+  {
+    title: 'Use Optimistic hook',
+    key: 'use_optimistic_hook',
+    description: 'New hook that lets you show a different state while an async action is underway',
+    component: <UseOptimistic />    
   },
   {
     title: 'Context As Provider',
