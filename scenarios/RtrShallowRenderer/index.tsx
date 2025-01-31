@@ -1,0 +1,2 @@
+export { RtrShallowRenderer } from './RtrShallowRenderer';
+
