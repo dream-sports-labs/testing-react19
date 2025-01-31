@@ -2,10 +2,11 @@ export const REF_AS_PROPS_TEXTS = {
     CODE_BLOCK: `import { Suspense } from "react";
 import { TextInput } from "react-native";
 
-function MyInput({placeholder, ref}) {
-  return <TextInput placeholder={placeholder} ref={ref} />
+function MyInput({ref}) {
+  return <Button onPress={() => ref?.current?.focus()} title="Focus Input" />;
 }
 
 //...
-<MyInput ref={ref} />`,
+<TextInput ref={inputRef} placeholder="Click on Focus Input" style={styles.input} />
+<MyInput ref={inputRef} />`,
   };
