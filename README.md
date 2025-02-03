@@ -1,7 +1,7 @@
 # React 19 Test Project
 
 This project is designed to explore and test React 19 features with React Native 0.78. It includes a variety of examples to demonstrate new capabilities introduced in React 19, along with upgrade-related changes.
-<img src="assets/React19Testing.gif" width="250" alt="App Demo">
+
 ## 🔍 What's Inside?
 
 ### ✅ Features from the React 19 Blog:
@@ -31,7 +31,7 @@ Here is the guide to run the sample app:
 
 ### 🖼️ Sample App Preview:
 
-Dummy screenshot
+<img src="assets/React19Testing.gif" width="250" alt="App Demo" />
 
 ### ⚡ Why This Project?
 This is a bare React Native project focused on testing React 19 features with React Native 0.78, which officially supports React 19. It's a handy reference if you're upgrading or experimenting with the latest React features.
