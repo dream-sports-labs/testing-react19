@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RtrShallowRenderer, RefCleanupFunctions, UseHookWithPromise, RefAsProps } from './scenarios';
-import { ErrorReporting } from './scenarios/ImproveErrorReporting';
-import { SearchScreen } from './scenarios/UseDefferedValue';
-import { SuspenseImprovements } from './scenarios/SuspenseImprovements';
+import { ErrorReporting } from './scenarios/ErrorReporting/ImproveErrorReporting';
+import { DefferedValueInitialWrapper } from './scenarios/UseDefferedValue/UseDefferedValue';
 const examples = [
   {
     title: 'RefAsProps',
@@ -51,19 +50,13 @@ const examples = [
     title: 'useDefferedValue initial arg',
     key: 'use_deffered_value',
     description: 'Testing useDefferedValue',
-    component: <SearchScreen deferredValue='hello'/>
+    component: <DefferedValueInitialWrapper/>
   },
   {
     title: 'Error Reporting Example',
     key: 'improve_error_reporting',
     description: 'batches similiar errors',
     component:<ErrorReporting />
-  },
-  {
-    title: 'Suspense Examples',
-    key: 'suspense_improvements',
-    description: 'promise auto suspense',
-    component:<SuspenseImprovements />
   }
 ];
 
