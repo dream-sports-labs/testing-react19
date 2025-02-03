@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
+import { USE_TRANSITION_FUNCTIONS_TEXTS } from '../../UseTransition.constants';
 
 type ItemProps = PropsWithChildren<{
   action: (newQuantity: number) => Promise<void>;
@@ -23,7 +24,7 @@ export const Item = ({action}: ItemProps) => {
 
   return (
     <View style={styles.item}>
-      <Text style={styles.title}>Eras Tour Tickets</Text>
+      <Text style={styles.title}>{USE_TRANSITION_FUNCTIONS_TEXTS.ITEM_TITLE}</Text>
 
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Quantity:</Text>

@@ -9,19 +9,19 @@ const examples = [
     component: <RefAsProps />, // Use React Node instead of function call
   },
   {
-    title: 'Use Transition hook',
+    title: 'useTransition hook',
     key: 'use_transition',
     description: 'New hook that lets you render a part of UI in the background',
     component: <UseTransition />
   },
   {
-    title: 'Use Action State hook',
+    title: 'useActionState hook',
     key: 'use_action_state',
     description: 'New hook that allows you to update state based on result of form action',
     component: <UseActionState />    
   },
   {
-    title: 'Use Optimistic hook',
+    title: 'useOptimistic hook',
     key: 'use_optimistic_hook',
     description: 'New hook that lets you show a different state while an async action is underway',
     component: <UseOptimistic />    
