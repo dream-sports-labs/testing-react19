@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RtrShallowRenderer, RefCleanupFunctions, UseHookWithPromise, RefAsProps, UseActionState, UseOptimistic, UseTransition } from './scenarios';
+import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RtrShallowRenderer, RefCleanupFunctions, UseHookWithPromise, RefAsProps, UseActionState, UseOptimistic, UseTransition, ErrorReporting, DefferedValueInitialWrapper} from './scenarios';
+
 const examples = [
   {
     title: 'RefAsProps',
@@ -62,6 +63,18 @@ const examples = [
     description: 'react-test-renderer is deprecated in order to use modern testing libraries',
     component: <ReactTestRenderer />,
   },
+  { 
+    title: 'useDefferedValue initial arg',
+    key: 'use_deffered_value',
+    description: 'Testing useDefferedValue',
+    component: <DefferedValueInitialWrapper/>
+  },
+  {
+    title: 'Error Reporting Example',
+    key: 'improve_error_reporting',
+    description: 'batches similiar errors',
+    component:<ErrorReporting />
+  }
 ];
 
 function App(): React.JSX.Element {
