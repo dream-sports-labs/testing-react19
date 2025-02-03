@@ -57,7 +57,7 @@ const examples = [
     component: <RtrShallowRenderer />,
   },
   {
-    title: 'Depreacted: react-test-renderer',
+    title: 'Deprecated: react-test-renderer',
     key: 'deprecated_react_test_renderer',
     description: 'react-test-renderer is deprecated in order to use modern testing libraries',
     component: <ReactTestRenderer />,
