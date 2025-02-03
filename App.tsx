@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, Pressable, StatusBar, StyleSheet } from 'react-native';
-import { RefAsProps } from './scenarios/RefAsProps';
-import { SearchScreen } from './scenarios/UseDefferedValue';
+import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RtrShallowRenderer, RefCleanupFunctions, UseHookWithPromise, RefAsProps } from './scenarios';
 import { ErrorReporting } from './scenarios/ImproveErrorReporting';
+import { SearchScreen } from './scenarios/UseDefferedValue';
 import { SuspenseImprovements } from './scenarios/SuspenseImprovements';
-
 const examples = [
   {
     title: 'RefAsProps',
@@ -13,24 +12,59 @@ const examples = [
     component: <RefAsProps />, // Use React Node instead of function call
   },
   {
-    title: 'useDefferedValue',
+    title: 'Context As Provider',
+    key: 'context_as_provider',
+    description: 'Consume context as provider',
+    component: <ContextAsProvider />,
+  },
+  {
+    title: 'use(Context)',
+    key: 'conditional_context',
+    description: 'Consume context conditionally with use()',
+    component: <ConditionalContext />,
+  },
+  {
+    title: 'use(Promise)',
+    key: 'use_with_promise',
+    description: 'Consume promise with use()',
+    component: <UseHookWithPromise />,
+  },
+  {
+    title: 'Cleanup Functions for Refs',
+    key: 'cleanup_functions_for_refs',
+    description: 'When the component unmounts, React will call the cleanup function returned from the ref callback',
+    component: <RefCleanupFunctions />,
+  },
+  {
+    title: 'react-test-renderer/shallow',
+    key: 'react_test_renderer_shallow',
+    description: 'Package name changed to import shallow renderer',
+    component: <RtrShallowRenderer />,
+  },
+  {
+    title: 'Depreacted: react-test-renderer',
+    key: 'deprecated_react_test_renderer',
+    description: 'react-test-renderer is deprecated in order to use modern testing libraries',
+    component: <ReactTestRenderer />,
+  },
+  { 
+    title: 'useDefferedValue initial arg',
     key: 'use_deffered_value',
     description: 'Testing useDefferedValue',
     component: <SearchScreen deferredValue='hello'/>
   },
   {
-    title: 'improveErrorReporting',
+    title: 'Error Reporting Example',
     key: 'improve_error_reporting',
     description: 'batches similiar errors',
     component:<ErrorReporting />
   },
   {
-    title: 'suspenseImprovements',
+    title: 'Suspense Examples',
     key: 'suspense_improvements',
     description: 'promise auto suspense',
     component:<SuspenseImprovements />
   }
-  // Add other scenarios here
 ];
 
 function App(): React.JSX.Element {
@@ -42,7 +76,7 @@ function App(): React.JSX.Element {
       {scenario !== null ? (
         <View style={styles.detailsContainer}>
           <Pressable style={styles.backButton} onPress={() => setScenario(null)}>
-            <Text style={styles.backButtonText}>← Back</Text>
+            <Text style={styles.backButtonText}>Back</Text>
           </Pressable>
           {examples.find((item) => item.key === scenario)?.component}
         </View>
