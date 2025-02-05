@@ -1,0 +1,2 @@
+export { ClientComponent } from './ClientComponent';
+
