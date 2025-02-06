@@ -1,6 +1,6 @@
 import { type PropsWithChildren } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Themes } from '../../../scenarios/ContextAsProvider/ContextAsProvider.interface';
+import { Themes } from '../../scenarios/ContextAsProvider/ContextAsProvider.interface';
 
 type CodeBlockProps = PropsWithChildren<{
   code?: string;

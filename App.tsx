@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import { ConditionalContext, ContextAsProvider, ReactTestRenderer, RtrShallowRenderer, RefCleanupFunctions, UseHookWithPromise, RefAsProps, UseActionState, UseOptimistic, UseTransition, ErrorReporting, DefferedValueInitialWrapper} from './scenarios';
+import { ConditionalContext, ContextAsProvider, DefferedValueInitialWrapper, ErrorReporting, ReactCompilerSample, ReactTestRenderer, RefAsProps, RefCleanupFunctions, RtrShallowRenderer, UseActionState, UseHookWithPromise, UseOptimistic, UseTransition } from './src/scenarios';
 
 const examples = [
   {
@@ -13,19 +13,19 @@ const examples = [
     title: 'useTransition hook',
     key: 'use_transition',
     description: 'New hook that lets you render a part of UI in the background',
-    component: <UseTransition />
+    component: <UseTransition />,
   },
   {
     title: 'useActionState hook',
     key: 'use_action_state',
     description: 'New hook that allows you to update state based on result of form action',
-    component: <UseActionState />    
+    component: <UseActionState />,
   },
   {
     title: 'useOptimistic hook',
     key: 'use_optimistic_hook',
     description: 'New hook that lets you show a different state while an async action is underway',
-    component: <UseOptimistic />    
+    component: <UseOptimistic />,
   },
   {
     title: 'Context As Provider',
@@ -63,18 +63,24 @@ const examples = [
     description: 'react-test-renderer is deprecated in order to use modern testing libraries',
     component: <ReactTestRenderer />,
   },
-  { 
+  {
     title: 'useDefferedValue initial arg',
     key: 'use_deffered_value',
     description: 'Testing useDefferedValue',
-    component: <DefferedValueInitialWrapper/>
+    component: <DefferedValueInitialWrapper/>,
   },
   {
     title: 'Error Reporting Example',
     key: 'improve_error_reporting',
     description: 'batches similiar errors',
-    component:<ErrorReporting />
-  }
+    component:<ErrorReporting />,
+  },
+  {
+    title: 'React Compiler in React Native',
+    key: 'react_compiler_sample',
+    description: 'React Compiler in React Native',
+    component:<ReactCompilerSample />,
+  },
 ];
 
 function App(): React.JSX.Element {
